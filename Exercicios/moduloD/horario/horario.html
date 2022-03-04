@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Hora do dia</h1>
+    </header>
+    <section>
+        <div id="msg">
+            Aqui vai aparecer a mensagem
+        </div>
+        <div id="foto">
+            <img id="imagem" src="manha.png" alt="Foto do amanhacer"> 
+        </div>
+    </section>
+    <footer> &copy; Gustavo Dev</footer>
+    <script>
+      function carregar(){  
+        var msg = document.getElementById('msg')
+        var img = document.getElementById('imagem')
+        var data = new Date()
+        var hora = data.getHours()
+        msg.innerHTML = `Agora são ${hora} horas.`
+        if( hora >= 0 && hora < 12){
+            img.src ='manha.png'
+            document.body.style.background='#5f3c14'
+        }else if ( hora >= 12 && hora < 18){
+            img.src = 'tarde.png'
+            document.body.style.background ='#f09e51'
+        }else{
+            img.src = 'noite.png'
+            document.body.style.background = '#554671'
+        }
+    }
+    </script>
+</body>
+</html>

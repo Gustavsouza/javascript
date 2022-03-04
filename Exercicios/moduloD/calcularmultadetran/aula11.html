@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição IF</title>
+</head>
+<body>
+    <h1>DETRAN</h1>
+    <h2>Sistemas de multas</h2>
+    Velocidade do carro: <input type="number" id="valor" placeholder="Insira o valor"> Km/h 
+    <input type="button" value="Verificar" onclick="multa()"> 
+    <div id="res" >
+        
+    </div>
+    <script>
+        function multa(){
+            var r = window.document.querySelector('input#valor').value
+            if (r > 60){
+                res.innerHTML = ` Sua velocidade é <strong> ${r} </strong> e tu  foi multado`
+            }else {
+                res.innerHTML = ` Sua velocidade é <strong> ${r} </strong> e tu não foi multado`
+            }
+        }
+    </script>
+</body>
+</html>
