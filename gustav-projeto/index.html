@@ -12,7 +12,7 @@
         <!-- Cabeçalho -->
         <h1>GUSTAVO ARAMIS</h1>
     </header>
-    <section id="folha">
+    <section id="folha"> 
         <!-- Section 1 -->
         <div id="esq">
             <!-- Lado esquerdo-->
@@ -33,14 +33,19 @@
                 <li><a href="https://gustavsouza.github.io/projeto-android/index.html" target="_blank" rel="next">Como surgiu o Android?</a></li>
                 <li><a href="https://gustavsouza.github.io/projeto-cordel/" target="_blank" rel="next">Mundo moderno</a></li>
                 <li><a href="https://gustavsouza.github.io/projeto-calcular-idade/" target="_blank" rel="next">Calcular idade</a></li>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti eligendi nam magni debitis. Magni, consectetur quos nam neque asperiores impedit exercitationem quibusdam facilis earum, cumque sapiente doloribus repellat ea praesentium. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, velit enim atque corporis ullam eum et cumque natus ea minima repellat optio iste facilis provident. Aliquid natus iusto eligendi consequatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos excepturi magnam, aspernatur iure nesciunt, sint non maiores minima architecto recusandae natus corrupti? Libero aliquid eveniet autem asperiores? At, ut rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit inventore voluptatibus qui magni voluptatum quisquam consectetur. Accusamus omnis dicta modi quis quod, vitae magni ex architecto animi. Quas, odit maxime!/p>
             </ul>
         </div>
+        <div id="btn"><input id="bot" type="button" value="Projetos" onclick="proxima()"></div>
     </section>
     <footer>
         <!-- Roda pé-->
         <p>&copy; Gustav Dev </p>
     </footer>
-    
+    <script>
+        function proxima(){
+            var some = document.getElementById('esq')
+            some.styel.setAttribute('display','none')
+        }
+    </script>
 </body>
 </html>

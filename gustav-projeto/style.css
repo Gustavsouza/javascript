@@ -33,23 +33,42 @@ body{
 div{
     background-color: var(--corcinza);
     /*box-shadow: 2px 3px 10px var(--vermelhoescuro) ;*/
-    display: inline-block;
+
 }
 div#esq{
     padding: 20px;
-    max-width:  30vh;
     background-color: var(--corlaranja);
+    margin: auto;
+    width: 300px;
+    display: block;
 }
 div#dir{
-    margin-left: 300px;
     padding: 20px;
     width: 500px;
+    display: none;
+}
+div>h1{
+    text-align: center;
 }
 section#folha{
     min-width: 300px;
     max-width: 1080px;
     margin: auto ; 
     background-color: var(--corlava); 
+    padding: 20px;
+}
+#btn{
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    background-color: var(--corlaranja);
+}
+#bot{
+    width: 300px;
+    height: 30px;
+    padding: 20px;
+    text-align: center;
+    margin:auto;
 }
 footer{
     background-color: var(--corcinza);
