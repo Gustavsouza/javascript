@@ -1,0 +1,61 @@
+@charset  "utf-8";
+*{
+    padding: 0px;
+    margin: 0px;
+}
+:root{
+    --corazul: #023E73; 
+    --corazul2:#024059;
+    --corlaranja:  #BF6415;
+    --corcinza:#D9CCC1;
+    --cormarrom:#8C503A;
+    /* outra paleta de cor que gostei*/
+    --corblue:#013440;
+    --corverde:#0C402D;
+    --cormusgo:#585925;
+    --corencadecente:#F2921D;
+    --corlava:#F2811D;
+    /* outra paleta de cor que gostei*/
+    --pele:#A6633C;
+    --marromver:#A62205;
+    --vermelhoescuro:#730C02;
+    --vermelhopreto:#400101;
+    --chumbo:#0D0D0D;
+}
+header{
+    background-color: var(--corazul);
+    height: 100px;
+    text-align: center;
+}
+body{
+    background-color: var(--corazul);
+}
+div{
+    background-color: var(--corcinza);
+    /*box-shadow: 2px 3px 10px var(--vermelhoescuro) ;*/
+    display: inline-block;
+}
+div#esq{
+    padding: 20px;
+    max-width:  30vh;
+    background-color: var(--corlaranja);
+}
+div#dir{
+    margin-left: 300px;
+    padding: 20px;
+    width: 500px;
+}
+section#folha{
+    min-width: 300px;
+    max-width: 1080px;
+    margin: auto ; 
+    background-color: var(--corlava); 
+}
+footer{
+    background-color: var(--corcinza);
+    text-align: center;
+    margin-bottom: 0px;
+}
+footer > p{
+    color: var(--corlaranja);
+}
