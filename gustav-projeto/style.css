@@ -46,6 +46,8 @@ div#dir{
     padding: 20px;
     width: 500px;
     display: none;
+    margin: auto;
+    background-color: var(--corlaranja);
 }
 div>h1{
     text-align: center;

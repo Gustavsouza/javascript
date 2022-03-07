@@ -44,7 +44,12 @@
     <script>
         function proxima(){
             var some = document.getElementById('esq')
-            some.styel.setAttribute('display','none')
+            var aparece = document.getElementById('dir')
+            if(some.style.display = 'none'){
+                aparece.style.display = 'block'
+            }else{
+                $(aparece).removeAttr('style')
+            }
         }
     </script>
 </body>
