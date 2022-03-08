@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+    <header>
+        <h1>Titulo</h1>
+    </header>
+    <section>
+        <div>
+            <input type="number" name="fator" id="fator"> 
+            <input type="button" value="Calcular" onclick="calcular()">
+        </div>
+        <div>
+            <select name="" id="resultado" multiple="multiple"></select>
+        </div>
+    </section>
+    <footer> &copy; Gustavo Dev</footer>
+    <script>
+        function calcular(){
+        var f = document.getElementById('fator').value
+        var resultado = document.getElementById('resultado')
+        resultado.innerHTML = ` `
+        for(var produto = 0; produto <=10; produto++){
+            var re = f*produto
+            resultado.innerHTML += `<option>${f} X ${produto} = ${re} </option>`
+        }
+        
+    }
+    </script>
+</body>
+</html>
