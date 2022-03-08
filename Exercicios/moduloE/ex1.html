@@ -32,14 +32,20 @@
             let i = Number(inicio)
             let f = Number (fim) 
             let p = Number(passo)
-            if(i.length == 0 || f.length == 0 || p.length == 0){
-                alert (`Tem coisa errada ai mermão!`)
-                //colocar foto do baiano
-            }else{ 
-                for (inicio; inicio <= fim; inicio += passo ){
-                    msg.innerHTML = ` pulando: ${inicio}` + msg.innerHTML
+            if (inicio.length == 0  || fim.length == 0 || passo.length == 0){
+                alert("Tem coisa errada ai")
+            }else if (i < f) {
+                msg.innerHTML = `Contando = `
+                for(i; i <= f; i = i + p){
+                    msg.innerHTML += ` 👉 ${i}`
                 }
-        }     
+            }else{
+                msg.innerHTML = `Contando = `
+                for(i; i >= f; i = i - p){
+                    msg.innerHTML += ` 👉 ${i}`
+            } 
+            }
+            msg.innerHTML += `🏁`
     }
     </script>
 </body>
