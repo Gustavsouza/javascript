@@ -13,17 +13,65 @@
     </header>
     <section>
         <div>
-            insira um número de 0 a 100 <input type="number" name="" id="fator"> 
-            <input type="button" value="Gerar">
+            <p>
+                insira um número de 0 a 100 <input type="number" name="" id="fator">
+                <input type="button" value="Adicionar" onclick="adiciona()">
+            </p>
         </div>
-        <div>
-            <select> </select>
-            <input type="button" value="Finalizar">
+        <div id="resultado">
+            <select id="msg" multiple="multiple"> </select>
+            <input type="button" value="Finalizar" onclick="gerar()">
         </div>
     </section>
     <footer> &copy; Gustavo Dev</footer>
     <script>
-        let numeros = [] = document.getElementById('fator').value
+        var fator = document.getElementById('fator')
+        var msg = document.getElementById('msg')
+        var vetor = []
+        function adiciona(){ 
+            if(Number(fator.value) > 100 ){
+                alert(`Coe pilantra ${Number(fator.value)} é maior que 100`)
+                document.getElementById('fator').value = ''
+            }else if (fator.value.length == 0){
+                alert('Insere um valor ai')
+                document.getElementById('fator').value = ''
+            }else{
+                var numero = Number(fator.value)
+                msg.innerHTML += `<option> Número ${numero} adicionado </option>`
+                vetor.push(`${numero}`)
+                //para resetar o campo
+                document.getElementById(`fator`).value = '' 
+            }
+        }
+        function gerar(){
+            //msg.innerHTML = `<option> Número ${vetor} adicionado </option>`
+          var soma  =  0
+          let maior = 0
+          let menor = 0
+          let media = 0
+          vetor.sort()
+          var res = document.getElementById('resultado')
+          res.innerHTML += ` <p> Temos ${vetor.length} cadastrados </p>`
+         for( var i = 0; i < vetor.length;i++){
+             soma =  Number(vetor[i]) + soma
+            if (Number(vetor[i] > maior )){
+                maior = Number(vetor[i])
+            }else{
+                maior = maior
+            }
+            if((Number(vetor[i])) < menor || (Number(vetor[i])) == 0 ){
+                menor = Number(vetor[i])
+            }else{
+                menor = menor
+            }
+            media = soma / vetor.length
+          }
+          res.innerHTML += ` <p> Temos o total de ${soma} </p>`
+          res.innerHTML += ` <p> Temos o maior número ${maior} </p>`
+          res.innerHTML += ` <p> Temos o menor número ${menor} </p>`
+          res.innerHTML += ` <p> Temos a média ${media} </p>`
+        }
+
     </script>
 </body>
 </html>
