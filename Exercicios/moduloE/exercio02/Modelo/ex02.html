@@ -17,7 +17,7 @@
             <input type="button" value="Calcular" onclick="calcular()">
         </div>
         <div>
-            <select name="" id="resultado" multiple="multiple"></select>
+            <select name="" id="resultado" multiple="multiple" aria-placeholder="Digite um número"></select>
         </div>
     </section>
     <footer> &copy; Gustavo Dev</footer>
@@ -25,12 +25,21 @@
         function calcular(){
         var f = document.getElementById('fator').value
         var resultado = document.getElementById('resultado')
-        resultado.innerHTML = ` `
-        for(var produto = 0; produto <=10; produto++){
+        resultado.innerHTML = `Digite um número`
+        if(f.length == 0){
+            resultado.innerHTML = ``
+            f = Number(window.prompt("Digite um valor: "))
+            for(var produto = 0; produto <=10; produto++){
+            var re = f*produto
+            resultado.innerHTML += `<option>${f} X ${produto} = ${re} </option>`
+            }
+        }else{
+            resultado.innerHTML = ``
+            for(var produto = 0; produto <=10; produto++){
             var re = f*produto
             resultado.innerHTML += `<option>${f} X ${produto} = ${re} </option>`
         }
-        
+    }
     }
     </script>
 </body>
