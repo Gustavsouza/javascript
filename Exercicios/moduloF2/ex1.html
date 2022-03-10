@@ -31,30 +31,29 @@
         var fator = document.getElementById('fator')
         var msg = document.getElementById('msg')
         var vetor = []
-        function tem(n){
-            for(i = 0; i < vetor.length; i++){
-                if( Number(vetor[i]) == n){
-                    return true 
-                }else{
-                    return false
-                }
-            }
+        //verificar se já tem na lista
 
-        }
         function adiciona(){ 
-            if(Number(fator.value) > 100 || tem(Number(fator.value)) == true ){
-                alert(`Coe pilantra ${Number(fator.value)} é maior que 100 ou já foi adicionado`)
-                document.getElementById('fator').value = ''
-            }else if (fator.value.length == 0){
-                alert('Insere um valor ai')
-                document.getElementById('fator').value = ''
-            }else{
-                var numero = Number(fator.value)
-                msg.innerHTML += `<option> Número ${numero} adicionado </option>`
-                vetor.push(`${numero}`)
-                //para resetar o campo
-                document.getElementById(`fator`).value = '' 
-            }
+                for( let pos in vetor){
+                    if(Number(vetor[pos]) == Number(fator.value)){
+                        alert(`Já tem o número parça`)
+                        document.getElementById('fator').value = ''
+                    }
+                }
+                if(Number(fator.value) > 100){
+                    alert(`Coe pilantra ${Number(fator.value)} é maior que 100 ou já foi adicionado`)
+                    document.getElementById('fator').value = ''
+                }else if (fator.value.length == 0){
+                    alert('Insere um valor ai')
+                    document.getElementById('fator').value = ''
+                }else{
+                    var numero = Number(fator.value)
+                    msg.innerHTML += `<option> Número ${numero} adicionado </option>`
+                    vetor.push(`${numero}`)
+                    //para resetar o campo
+                    document.getElementById(`fator`).value = '' 
+                }
+
             resultado.innerHTML = ` ` 
         }
         function gerar(){
