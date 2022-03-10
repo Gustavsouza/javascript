@@ -32,26 +32,30 @@
         var msg = document.getElementById('msg')
         var vetor = []
         //verificar se já tem na lista
-
-        function adiciona(){ 
-                for( let pos in vetor){
+        function repete(vetor,fator){
+            for( let pos in vetor){
                     if(Number(vetor[pos]) == Number(fator.value)){
-                        alert(`Já tem o número parça`)
-                        document.getElementById('fator').value = ''
+                        return true
                     }
                 }
-                if(Number(fator.value) > 100){
+        }
+
+        function adiciona(){ 
+                if(Number(fator.value) > 100 || repete(vetor,fator) == true){
                     alert(`Coe pilantra ${Number(fator.value)} é maior que 100 ou já foi adicionado`)
+                    //também para resetar os campos
                     document.getElementById('fator').value = ''
                 }else if (fator.value.length == 0){
-                    alert('Insere um valor ai')
-                    document.getElementById('fator').value = ''
+                    alert('Insere um valor ai') 
+                    //Era pra funcionar
+                    fator.focus()
                 }else{
                     var numero = Number(fator.value)
                     msg.innerHTML += `<option> Número ${numero} adicionado </option>`
                     vetor.push(`${numero}`)
                     //para resetar o campo
-                    document.getElementById(`fator`).value = '' 
+                    fator.value = '' 
+                    fator.focus()
                 }
 
             resultado.innerHTML = ` ` 
