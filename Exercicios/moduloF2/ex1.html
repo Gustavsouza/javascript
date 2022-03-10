@@ -18,9 +18,12 @@
                 <input type="button" value="Adicionar" onclick="adiciona()">
             </p>
         </div>
-        <div id="resultado">
+        <div>
             <select id="msg" multiple="multiple"> </select>
             <input type="button" value="Finalizar" onclick="gerar()">
+        </div>
+        <div id="resultado">
+
         </div>
     </section>
     <footer> &copy; Gustavo Dev</footer>
@@ -28,9 +31,19 @@
         var fator = document.getElementById('fator')
         var msg = document.getElementById('msg')
         var vetor = []
+        function tem(n){
+            for(i = 0; i < vetor.length; i++){
+                if( Number(vetor[i]) == n){
+                    return true 
+                }else{
+                    return false
+                }
+            }
+
+        }
         function adiciona(){ 
-            if(Number(fator.value) > 100 ){
-                alert(`Coe pilantra ${Number(fator.value)} é maior que 100`)
+            if(Number(fator.value) > 100 || tem(Number(fator.value)) == true ){
+                alert(`Coe pilantra ${Number(fator.value)} é maior que 100 ou já foi adicionado`)
                 document.getElementById('fator').value = ''
             }else if (fator.value.length == 0){
                 alert('Insere um valor ai')
@@ -42,12 +55,13 @@
                 //para resetar o campo
                 document.getElementById(`fator`).value = '' 
             }
+            resultado.innerHTML = ` ` 
         }
         function gerar(){
             //msg.innerHTML = `<option> Número ${vetor} adicionado </option>`
           var soma  =  0
           let maior = 0
-          let menor = 0
+          let menor = vetor[0]
           let media = 0
           vetor.sort()
           var res = document.getElementById('resultado')
@@ -56,13 +70,9 @@
              soma =  Number(vetor[i]) + soma
             if (Number(vetor[i] > maior )){
                 maior = Number(vetor[i])
-            }else{
-                maior = maior
             }
-            if((Number(vetor[i])) < menor || (Number(vetor[i])) == 0 ){
+            if((Number(vetor[i])) < menor ){
                 menor = Number(vetor[i])
-            }else{
-                menor = menor
             }
             media = soma / vetor.length
           }
