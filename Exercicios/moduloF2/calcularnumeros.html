@@ -19,7 +19,7 @@
             </p>
         </div>
         <div>
-            <select id="msg" multiple="multiple"> </select>
+            <p><select id="msg" multiple="multiple"> </select></p>
             <input type="button" value="Finalizar" onclick="gerar()">
         </div>
         <div id="resultado">
@@ -42,13 +42,14 @@
 
         function adiciona(){ 
                 if(Number(fator.value) > 100 || repete(vetor,fator) == true){
-                    alert(`Coe pilantra ${Number(fator.value)} é maior que 100 ou já foi adicionado`)
+                    alert(`${Number(fator.value)} é maior que 100 ou já foi adicionado`)
                     //também para resetar os campos
                     document.getElementById('fator').value = ''
+                    document.getElementById('fator').focus()
                 }else if (fator.value.length == 0){
                     alert('Insere um valor ai') 
                     //Era pra funcionar
-                    fator.focus()
+                    document.getElementById('fator').focus()
                 }else{
                     var numero = Number(fator.value)
                     msg.innerHTML += `<option> Número ${numero} adicionado </option>`
